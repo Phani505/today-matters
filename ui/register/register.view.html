@@ -1,20 +1,48 @@
-﻿<div class="col-md-6 col-md-offset-3">
+﻿<div class="col-md-6 pull-left" style="color:#8e8c8c; padding-top:5%;">
+    <h1>Today Matters</h1>
+    <h3>Goal & Milestone Tracking Tool</h3>
+    What is Lorem Ipsum?
+    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+
+    Why do we use it?
+    It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
+</div>
+<div class="col-md-6 pull-right">
     <h2>Register</h2>
     <form name="form" ng-submit="vm.register()" role="form">
-        <div class="form-group" ng-class="{ 'has-error': form.firstName.$dirty && form.firstName.$error.required }">
-            <label for="username">First name</label>
-            <input type="text" name="firstName" id="firstName" class="form-control" ng-model="vm.user.firstName" required />
-            <span ng-show="form.firstName.$dirty && form.firstName.$error.required" class="help-block">First name is required</span>
+        <div class="form-group" ng-class="{ 'has-error': form.iboNumber.$dirty && form.iboNumber.$error.required }">
+            <label for="iboNumber">IBO Number</label>
+            <input type="text" name="iboNum" id="iboNumber" class="form-control" ng-model="vm.user.iboNumber" required />
+            <span ng-show="form.iboNumber.$dirty && form.iboNumber.$error.required" class="help-block">IBO Number is required</span>
         </div>
-        <div class="form-group" ng-class="{ 'has-error': form.lastName.$dirty && form.lastName.$error.required }">
-            <label for="username">Last name</label>
-            <input type="text" name="lastName" id="Text1" class="form-control" ng-model="vm.user.lastName" required />
-            <span ng-show="form.lastName.$dirty && form.lastName.$error.required" class="help-block">Last name is required</span>
+        <div class="form-group" ng-class="{ 'has-error': form.iboName.$dirty && form.iboName.$error.required }">
+            <label for="iboName">IBO Name</label>
+            <input type="text" name="iboName" id="iboName" class="form-control" ng-model="vm.user.iboName" required />
+            <span ng-show="form.iboName.$dirty && form.iboName.$error.required" class="help-block">IBO Name is required</span>
         </div>
-        <div class="form-group" ng-class="{ 'has-error': form.username.$dirty && form.username.$error.required }">
-            <label for="username">Username</label>
-            <input type="text" name="username" id="username" class="form-control" ng-model="vm.user.username" required />
-            <span ng-show="form.username.$dirty && form.username.$error.required" class="help-block">Username is required</span>
+        <div class="form-group" ng-class="{ 'has-error': form.iboType.$dirty && form.iboType.$error.required }">
+            <label for="mobileNumber">IBO Type</label>
+            <select name="upLineIbo" id="iboType" class="form-control" ng-model="vm.user.iboType" required>
+                <option ng-repeat="iboType in vm.iboTypes">{{iboType}}</option>
+            </select>
+            <span ng-show="form.upLineIbo.$dirty && form.upLineIbo.$error.required" class="help-block">Up Line IBO is required</span>
+        </div>
+        <div class="form-group" ng-class="{ 'has-error': form.mobileNumber.$dirty && form.mobileNumber.$error.required }">
+            <label for="mobileNumber">Mobile Number</label>
+            <input type="text" name="mobileNumber" id="mobileNumber" class="form-control" ng-model="vm.user.mobileNumber" required />
+            <span ng-show="form.mobileNumber.$dirty && form.mobileNumber.$error.required" class="help-block">Mobile Number is required</span>
+        </div>
+        <div class="form-group" ng-class="{ 'has-error': form.upLineIbo.$dirty && form.upLineIbo.$error.required }">
+            <label for="mobileNumber">Up-line IBO</label>
+            <select name="upLineIbo" id="upLineIbo" class="form-control" ng-model="vm.user.upLineIbo" required>
+                <option ng-repeat="upLineIbo in vm.allUplines">{{upLineIbo}}</option>
+            </select>
+            <span ng-show="form.upLineIbo.$dirty && form.upLineIbo.$error.required" class="help-block">Up Line IBO is required</span>
+        </div>
+        <div class="form-group" ng-class="{ 'has-error': form.email.$dirty && form.email.$error.required }">
+            <label for="email">Email ID</label>
+            <input type="text" name="email" id="email" class="form-control" ng-model="vm.user.email" required />
+            <span ng-show="form.email.$dirty && form.email.$error.required" class="help-block">Email is required</span>
         </div>
         <div class="form-group" ng-class="{ 'has-error': form.password.$dirty && form.password.$error.required }">
             <label for="password">Password</label>

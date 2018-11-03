@@ -10,7 +10,8 @@
         var vm = this;
 
         vm.register = register;
-
+        vm.allUplines =['test1','test2','test3'];
+        vm.iboTypes = ['Single','Couple'];
         function register() {
             vm.dataLoading = true;
             UserService.Create(vm.user)
